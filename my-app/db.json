@@ -1018,6 +1018,7 @@
     },
     "name":"Palutena",
     "order":"54",
+    "special": ["Autorecticle","Explosive Flame","Warp","Counter/Reflect Barrier"],
     "series":{
       "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1595263748/Series/avacpo60oulifezowbm3.svg",
       "name":"Kid Icarus"
