@@ -1,14 +1,12 @@
 
 import React, {useEffect} from 'react';
-import AddCharacter from './AddCharacter';
 
-import CharacterDisplay from './CharacterDisplay';
-import {BrowserRouter as Router, Routes, Router, } from "react-router-dom"
-import Home from './Pages/Home';
-import Characters from "./Pages/Characters"
-import Favorites from './Pages/Favorites';
+import { Routes, Route, NavLink } from "react-router-dom"
+import Home from './Home';   
+import Characters from "./Characters"
+import Favorites from './Favorites';
 
-const baseURL = "http://localhost:3000/characters"
+const baseURL = "http://localhost:3001/characters"
 
 function App() {
 
@@ -21,18 +19,14 @@ function App() {
 
 
   return (
-    <Router>
-      <nav>
-        <Link to="/"> Home</Link>
-        <Link to="/characters">Characters</Link>
-        <Link to="/favorites">Favorites</Link>
-      </nav>
+    <Routes>
+  
       <Routes>
         <Route path="/" element={<Home />} /> 
         <Route path="/characters" element={<Characters />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
-    </Router>
+    </Routes>
   );
 }
 
