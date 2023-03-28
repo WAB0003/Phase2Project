@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CharacterCard from "./CharacterCard";
-import { Card } from 'semantic-ui-react'; 
+import { Container, Card, Button } from 'semantic-ui-react'; 
 
 function Characters({allCharacters}){
 
@@ -10,9 +10,11 @@ function Characters({allCharacters}){
    })
 
     return (
-    <Card.Group itemsPerRow={5}>
-        {characterDisplay}
-    </Card.Group>
+        <Container>
+            <Card.Group itemsPerRow={5}>
+                {characterDisplay}
+            </Card.Group>
+        </Container>
     )
 }
 
