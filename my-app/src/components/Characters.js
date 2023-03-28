@@ -9,11 +9,8 @@ function Characters({allCharacters}){
         return <CharacterCard key={index} character={character} />
    })
 
-
-
-
     return (
-    <Card.Group itemsPerRow={3}>
+    <Card.Group itemsPerRow={5}>
         {characterDisplay}
     </Card.Group>
     )
