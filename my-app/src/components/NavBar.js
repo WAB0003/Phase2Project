@@ -22,26 +22,24 @@ function NavBar() {
             <Toolbar>
                 <NavLink
                   to="/"
-                  
                   style={linkStyles}
-                  
+                  sx={{ mr:10 }}
                 >
                   Home
                 </NavLink>
+
                 <NavLink
                   to="/characters"
-                  
                   style={linkStyles}
-                  
+                  sx={{ mr:10 }}
                 >
                   Characters
                 </NavLink>
+
                 <NavLink
                   to="/addCharacter"
-                  
                   style={linkStyles}
-                 
-                  
+                  sx={{ mr:10 }}
                 >
                    Add Characters
                 </NavLink>
