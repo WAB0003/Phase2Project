@@ -1,32 +1,38 @@
 
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
-import { Routes, Route, NavLink } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Home from './Home';   
 import Characters from "./Characters"
 import Favorites from './Favorites';
+// import NavBar from './NavBar';
+import AddCharacter from './AddCharacter';
 
 const baseURL = "http://localhost:3001/characters"
 
+
 function App() {
+  const [allCharacters,setAllCharacter]=useState([])
 
   useEffect(()=>{
     fetch(baseURL)
     .then(r=>r.json())
-    .then(characters=>console.log(characters))
+    .then(characters=>setAllCharacter(characters))
   },[])
 
+  console.log(allCharacters)
 
 
   return (
+    <div>
+    {/* <NavBar/> */}
     <Routes>
-  
-      <Routes>
-        <Route path="/" element={<Home />} /> 
-        <Route path="/characters" element={<Characters />} />
-        <Route path="/favorites" element={<Favorites />} />
-      </Routes>
+        <Route exact path="/" element={<Home />}/>
+        <Route path="/characters" element={<Characters allCharacters={allCharacters} />}/>
+        <Route path="/favorites" element={<Favorites />}/>
+        <Route path="/addCharacter" element={<AddCharacter />}/>
     </Routes>
+    </div>
   );
 }
 
