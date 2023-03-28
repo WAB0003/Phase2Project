@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom"
 import Home from './Home';   
 import Characters from "./Characters"
 import Favorites from './Favorites';
-// import NavBar from './NavBar';
+import NavBar from './NavBar';
 import AddCharacter from './AddCharacter';
 
 const baseURL = "http://localhost:3001/characters"
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div>
-    {/* <NavBar/> */}
+    <NavBar/>
     <Routes>
         <Route exact path="/" element={<Home />}/>
         <Route path="/characters" element={<Characters allCharacters={allCharacters} />}/>

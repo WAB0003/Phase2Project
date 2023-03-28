@@ -22,27 +22,26 @@ function NavBar() {
             <Toolbar>
                 <NavLink
                   to="/"
-                  exact
+                  
                   style={linkStyles}
-                  activeStyle={{
-                  }}
+                  
                 >
+                  Home
                 </NavLink>
                 <NavLink
                   to="/characters"
-                  exact
+                  
                   style={linkStyles}
-                  activeStyle={{
-                  }}
+                  
                 >
                   Characters
                 </NavLink>
                 <NavLink
                   to="/addCharacter"
-                  exact
+                  
                   style={linkStyles}
-                  activeStyle={{
-                  }}
+                 
+                  
                 >
                    Add Characters
                 </NavLink>
