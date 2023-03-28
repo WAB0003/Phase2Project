@@ -1,7 +1,7 @@
 
 import React from 'react';
 import CharacterCard from "./CharacterCard";
-
+import { Card } from 'semantic-ui-react'; 
 
 function Characters({allCharacters}){
 
@@ -13,9 +13,9 @@ function Characters({allCharacters}){
 
 
     return (
-    <div style ={{paddingTop:100}}>
+    <Card.Group itemsPerRow={3}>
         {characterDisplay}
-    </div>
+    </Card.Group>
     )
 }
 

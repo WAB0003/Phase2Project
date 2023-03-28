@@ -22,9 +22,8 @@ function NavBar() {
             <Toolbar>
                 <NavLink
                   to="/"
-                  
                   style={linkStyles}
-                  
+                  variant="h10"
                 >
                   Home
                 </NavLink>
