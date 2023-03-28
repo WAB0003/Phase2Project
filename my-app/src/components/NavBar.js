@@ -23,24 +23,23 @@ function NavBar() {
                 <NavLink
                   to="/"
                   style={linkStyles}
-                  variant="h10"
+                  
                 >
                   Home
                 </NavLink>
+
                 <NavLink
                   to="/characters"
-                  
                   style={linkStyles}
-                  
+                  sx={{ mr:10 }}
                 >
                   Characters
                 </NavLink>
+
                 <NavLink
                   to="/addCharacter"
-                  
                   style={linkStyles}
-                 
-                  
+                  sx={{ mr:10 }}
                 >
                    Add Characters
                 </NavLink>
