@@ -1,17 +1,22 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
-function Characters(){
-    const navigate = useNavigate()
-    return <div>
-        Characters
-        <button onClick={()=>{
-            navigate("/")
-        }}>Go Home</button>
-        <button onClick={()=>{
-            navigate("/favorites")
-        }}>Go To Favorites</button>
+import React from 'react';
+import CharacterCard from "./CharacterCard";
+
+
+function Characters({allCharacters}){
+
+   const characterDisplay = allCharacters.map((character,index)=>{
+        return <CharacterCard key={index} character={character} />
+   })
+
+
+
+
+    return (
+    <div style ={{paddingTop:100}}>
+        {characterDisplay}
     </div>
+    )
 }
 
 export default Characters;
