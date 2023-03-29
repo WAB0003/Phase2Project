@@ -20,12 +20,9 @@ function App() {
     .then(characters=>setAllCharacter(characters))
   },[])
 
-  console.log(allCharacters)
-
-
   return (
     <div>
-    <NavBar/>
+    <NavBar allCharacters={allCharacters}/>
     <Routes>
         <Route exact path="/" element={<Home />}/>
         <Route path="/characters" element={<Characters allCharacters={allCharacters} />}/>
