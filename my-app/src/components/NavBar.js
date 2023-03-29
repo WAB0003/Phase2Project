@@ -98,8 +98,24 @@ function NavBar({allCharacters}) {
                       to="/addCharacter"
                       style={{color:"white"}}
                     >
-                      Add Characters
+                      Add Character
                     </NavLink>
+                  </Typography>
+                </Button>
+
+                <Button variant="text">
+                <Typography
+                  variant="h6"
+                  noWrap
+                  paddingRight={"2.5em"}
+                  paddingLeft={"2.5em"}
+                  >
+                  <NavLink
+                    to="/favorites"
+                    style={{color:"white"}}
+                  >
+                    Favorites
+                  </NavLink>
                   </Typography>
                 </Button>
 
