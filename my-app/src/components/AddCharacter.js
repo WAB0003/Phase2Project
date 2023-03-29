@@ -1,116 +1,113 @@
- import React, {useState} from 'react';
+import React from 'react'
+import { Button, Form , Container} from 'semantic-ui-react'
+import { useState } from 'react'
 
 
-function AddCharacter ({character}) { 
-  const [form, setForm] = useState({});
+function AddCharacter ({baseURL, handleNewCharacter}) { 
+
+  const [formData, setFormData] = useState({
+    name: "",
+    special: "",
+    images:"",
+    seriesName: "",
+  })
+  //destructure formData into useable items
+  const {name, special, images, seriesName} = formData
+
   const handleChange = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
-    setForm({
-      ...form, 
-      [name]: value, 
-    });
-  };
-  let handleSubmit = (e) => {
-    e.preventDefault();
-    fetch('http://localhost.3001/characters', {
-      method: 'POST',
+    setFormData({...formData,
+      [e.target.name] : e.target.value,
+    })
+  }
+  //!create a submit button event To send new player to Character list
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  //*Create a new Object EXACTLY like the object being sent to server
+    const newPlayerObj = {
+      alsoAppearsIn: [
+      "N/A"
+      ],
+      availability: "Starter",
+      images:{
+        icon:"",
+        portrait: images,
+      },
+      name:name,
+      order:"1",
+      special: [special],
+      tier: "A",
+      series:{
+        icon:"",
+        name :seriesName
+      }
+    }
+
+    //*Add newPlayer to data base
+    fetch(baseURL, {
+      method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      })
-      .then((res) => res.json())
-      .then((data) => AddCharacter(character));
-    };
-    console.log(character);
-    return ( 
-      <div className="new-character-form">
-      <h2>Add Character</h2>
-      <form onSubmit={handleSubmit}>
-      <input
-      onChange={handleChange}
-      type="text"
-      name="name"
-      placeholder="Name"
-      />
-      <input
-      onChange={handleChange}
-      type="img"
-      name="image"
-      placeholder="Image URL"
-      />
-      <input
-      onChange={handleChange}
-      type="text"
-      name="Special"
-          placeholder="Special Moves"
-          />
-          <button type="submit">Add Character</button>
-          </form>
-          </div>
-          );
-        } 
+        "Content-Type":"application/json",
+      },
+      body:JSON.stringify(newPlayerObj)
+    })
+    .then((r)=>r.json())
+    .then((newPlayer)=>{
+      handleNewCharacter(newPlayer)
+    } )
 
+    //*Reset the form after it's been submitted
+    setFormData({
+      name: "",
+      special: "",
+      images:"",
+      seriesName: "",
+    })
+  }
 
+  return (
+    <Container style={{paddingTop: "6em"}} >
+      <Form >
+        <Form.Field width={5}>
+          <label>New Player Name</label>
+          <input placeholder='Enter Name Here' name="name" value={name} onChange={handleChange}/>
+        </Form.Field>
+        <Form.Field width={5}>
+          <label>Special Moves</label>
+          <input placeholder='Enter Any Special Moves' name="special" value={special} onChange={handleChange}/>
+        </Form.Field>
+        <Form.Field width={5}>
+          <label>Image</label>
+          <input placeholder='Enter Image URL' name="images" value={images} onChange={handleChange}/>
+        </Form.Field>
+        <Form.Field width={5}>
+          <label>Series</label>
+          <input placeholder='Enter Game Series' name="seriesName" value={seriesName} onChange={handleChange}/>
+        </Form.Field>
+        <Button type='submit'onClick={handleSubmit} >Add New Player</Button>
+      </Form>
+    </Container>
+  )
+ 
+}
 export default AddCharacter;
-        /* const baseURL = "http://localhost:3001/characters"
-        
-        
-        
-        function NewCharacterForm({addCharacter}) {
-          const [name, setName] = useState("");
-          const [image, setImage] = useState("");
-          const [specialMoves, setSpecialMoves] = useState("");
-          
-          function handleSubmit(e) {
-            e.preventDefault();
-            fetch(baseURL, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                name,
-                image,
-          specialMoves
-        }),
-      })
-      .then((r) => r.json())
-      .then((newCharacters) => addCharacter(newCharacters));
-      
-      setName("");
-      setImage("");
-      setSpecialMoves("");
-    }
-    
-    return (
-      <form className="new-character-form" onSubmit={handleSubmit} >
-      <input
-      placeholder="Name"
-      value={name}
-      onChange={(e) => setName(e.target.value)}
-      />
-      
-      <input 
-      placeholder="Image"
-      value={image}
-      onChange={(e) => setImage(e.target.value)}
-      />
-      
-      <input 
-      placeholder="Special Moves"
-      rows={10}
-      value={specialMoves}
-      onChange={(e) => setSpecialMoves(e.target.value)}
-      />
-      
-      <input  
-      type="submit"
-      value="Add Character"
-      />
-      </form>
-      );
-    }
-    */
- //export default AddCharacter;
+
+  // {
+  //   "alsoAppearsIn": [
+  //     "SSB",
+  //     "Melee",
+  //     "Brawl",
+  //     "SSB4"
+  //   ],
+  //   "availability": "Starter",
+  //   "images":{
+  //     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501674/Ultimate%20Characters/Icons/120px-MarioHeadSSBUWebsite_hkzzpq.png",
+  //     "portrait":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501176/Ultimate%20Characters/Portraits/350_emjsmz.png"
+  //   },
+  //   "name":"Mario",
+  //   "order":"1",
+  //   "special": ["Fireball","Cape","Super Jump Punch","F.L.U.D.D."],
+  //   "tier": "A",
+  //   "series":{
+  //     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501902/Series/mario_ncgezx.svg",
+  //     "name":"Mario"
+  //   }
