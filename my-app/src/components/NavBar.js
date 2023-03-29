@@ -50,10 +50,9 @@ function NavBar({allCharacters}) {
     <FilterDisplay allCharacters={allCharacters} open={open} setOpen={setOpen}/>
   );
   return (
-      <div alignItems={"center"} pd="">
+      <div pd="">
         <Box sx={{ flexGrow: 1 }}>
-          <AppBar display={'inline-flex'} 
-          alignItems={'center'} 
+          <AppBar display={'inline-flex'}  
           style={{ background: '#17252A' }}>
             <Toolbar>
               <Button variant="text">
