@@ -1,9 +1,9 @@
 import React from 'react'
-import { Button, Form , Container, Icon} from 'semantic-ui-react'
+import { Button, Form , Container} from 'semantic-ui-react'
 import { useState } from 'react'
 
 
-function AddCharacter ({baseURL}) { 
+function AddCharacter ({baseURL, handleNewCharacter}) { 
 
   const [formData, setFormData] = useState({
     name: "",
@@ -24,24 +24,23 @@ function AddCharacter ({baseURL}) {
     e.preventDefault()
   //*Create a new Object EXACTLY like the object being sent to server
     const newPlayerObj = {
-        alsoAppearsIn: [
-         "N/A"
-        ],
-        availability: "N/A",
-        images:{
-          icon:"N/A",
-          portrait: images,
-        },
-        name:name,
-        order:"n/a",
-        special: [special],
-        tier: "N/A",
-        series:{
-          icon:"N/A",
-          name:seriesName,
-        }
+      alsoAppearsIn: [
+      "N/A"
+      ],
+      availability: "Starter",
+      images:{
+        icon:"",
+        portrait: images,
+      },
+      name:name,
+      order:"1",
+      special: [special],
+      tier: "A",
+      series:{
+        icon:"",
+        name :seriesName
+      }
     }
-    console.log(newPlayerObj)
 
     //*Add newPlayer to data base
     fetch(baseURL, {
@@ -49,13 +48,20 @@ function AddCharacter ({baseURL}) {
       headers: {
         "Content-Type":"application/json",
       },
-      body: JSON.stringify(newPlayerObj)
+      body:JSON.stringify(newPlayerObj)
     })
+    .then((r)=>r.json())
+    .then((newPlayer)=>{
+      handleNewCharacter(newPlayer)
+    } )
 
-
-
-
-
+    //*Reset the form after it's been submitted
+    setFormData({
+      name: "",
+      special: "",
+      images:"",
+      seriesName: "",
+    })
   }
 
   return (
