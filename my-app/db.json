@@ -724,7 +724,7 @@
   "availability": "Unlockable",
   "images":{
     "icon":"https://gamefaqs.gamespot.com/a/faqs/92/76692-108.png",
-    "portrait":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt5CyRk9Qqx168VeugymbDBc8sg-nbQvPY1IUHuay6&s"
+    "portrait":"https://png.pngitem.com/pimgs/s/135-1359974_squirtle-png-high-quality-image-super-smash-bros.png"
   },
   "name":"Pokémon Trainer (Squirtle)",
   "order":"33",
@@ -742,7 +742,7 @@
   "availability": "Unlockable",
   "images":{
     "icon":"https://gamefaqs.gamespot.com/a/faqs/92/76692-109.png",
-    "portrait":"https://w7.pngwing.com/pngs/741/847/png-transparent-pokemon-go-ivysaur-bulbasaur-venusaur-pokemon-leaf-cartoon-fictional-character-thumbnail.png"
+    "portrait":"https://png.pngitem.com/pimgs/s/1-10157_super-smash-bros-ultimate-ivysaur-hd-png-download.png"
   },
   "name":"Pokémon Trainer (Ivysaur)",
   "order":"34",
@@ -760,7 +760,7 @@
   "availability": "Unlockable",
   "images":{
     "icon":"https://gamefaqs.gamespot.com/a/faqs/92/76692-110.png",
-    "portrait":"https://w7.pngwing.com/pngs/501/489/png-transparent-pokemon-snap-charizard-pokemon-red-and-blue-charmander-charizard-dragon-orange-computer-wallpaper-thumbnail.png"
+    "portrait":"https://png.pngitem.com/pimgs/s/689-6891196_charizard-png-hd-transparent-png.png"
   },
   "name":"Pokémon Trainer (Charizard)",
   "order":"35",
@@ -1059,7 +1059,8 @@
   },
   "name":"Mii Brawler",
   "order":"51",
-  "special": ["N/A"],
+  "special": ["Exploding Side Kick","Onslaught","Soaring Axe Kick","Counter Throw"],
+  "tier":"C",
   "series":{
     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1595552332/Series/ofc2xcyawclffowvoqu1.svg",
     "name":"Super Smash Bros."
@@ -1076,7 +1077,8 @@
   },
   "name":"Mii Swordfighter",
   "order":"52",
-  "special": ["N/A"],
+  "special": ["Gale Strike","Gale Stab","Hero's Spin","Power Thrust"],
+  "tier":"E",
   "series":{
     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1595552332/Series/ofc2xcyawclffowvoqu1.svg",
     "name":"Super Smash Bros."
@@ -1093,7 +1095,8 @@
   },
   "name":"Mii Gunner",
   "order":"53",
-  "special": ["N/A"],
+  "special": ["Charge Blast","Gunner Missile","Bomb Drop","Arm Rocket"],
+  "tier":"C",
   "series":{
     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1595552332/Series/ofc2xcyawclffowvoqu1.svg",
     "name":"Super Smash Bros."
@@ -1266,7 +1269,7 @@
   "availability": "Unlockable",
   "images":{
     "icon":"https://gamefaqs.gamespot.com/a/faqs/92/76692-25.png",
-    "portrait":"https://p7.hiclipart.com/preview/32/131/601/fire-emblem-fates-fire-emblem-awakening-fire-emblem-heroes-super-smash-bros-art-fire-emblem-fates-corrin.jpg"
+    "portrait":"https://png.pngitem.com/pimgs/s/135-1353586_super-smash-bros-corrin-smash-ultimate-render-hd.png"
   },
   "name":"Corrin",
   "order":"61",
@@ -1302,7 +1305,7 @@
   "availability": "Unlockable",
   "images":{
     "icon":"https://gamefaqs.gamespot.com/a/faqs/92/76692-23.png",
-    "portrait":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWdSrjFDB0WuocxyZJ2CVeIFuB72biu_fgxAylwnNHyQ&s"
+    "portrait":"https://png.pngitem.com/pimgs/s/1-19942_super-smash-bros-ultimate-inkling-hd-png-download.png"
   },
   "name":"Inkling",
   "order":"64",
@@ -1527,11 +1530,11 @@
   "availability": "Downloadable",
   "images":{
     "icon":"https://gamefaqs.gamespot.com/a/faqs/92/76692-123.png",
-    "portrait":"https://w7.pngwing.com/pngs/136/115/png-transparent-minecraft-video-game-mojang-others-game-video-game-fictional-character.png"
+    "portrait":"https://png.pngitem.com/pimgs/s/509-5092403_minecraft-steve-in-smash-hd-png-download.png"
   },
   "name":"Steve",
   "order":"77",
-  "special": ["Mine/Craft/CreateBloock","Minecraft","Elytra","TNT"],
+  "special": ["Mine/CreateBlock","Minecraft","Elytra","TNT"],
   "tier": "S",
   "series":{
     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1595700128/Series/qnwoxcjwqlxxt8sxwfbj.svg",

@@ -8,13 +8,22 @@ import { NavLink } from "react-router-dom";
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import SortIcon from '@mui/icons-material/Sort';
-import "./NavBar.css"
+import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
+import Drawer from '@mui/material/Drawer';
+import "./NavBar.css";
+import FilterDisplay from "./filterDisplay";
+
 
 
 function NavBar({allCharacters}) { 
+  const [open, setOpen] = useState(false);
+  
+
   const handleSubmit = (e) =>{
 
   }
+  
 
   const CssTextField = styled(TextField)({
     '& label.Mui-focused': {
@@ -36,57 +45,66 @@ function NavBar({allCharacters}) {
       },
     }
   });
-
+ 
+  const getList = () => (
+    <FilterDisplay allCharacters={allCharacters} open={open} setOpen={setOpen}/>
+  );
   return (
-      <div alignItems={"center"}>
+      <div alignItems={"center"} pd="">
         <Box sx={{ flexGrow: 1 }}>
           <AppBar display={'inline-flex'} 
           alignItems={'center'} 
           style={{ background: '#17252A' }}>
             <Toolbar>
-            
-              <Typography
-                variant="h6"
-                noWrap
-                paddingRight="5em"
-                paddingLeft={"1em"}>
-              <NavLink
+              <Button variant="text">
+                <Typography
+                  variant="h6"
+                  noWrap
+                  paddingRight="2.5em"
+                  paddingLeft={"2.5em"}>
+                <NavLink
                   to="/"
-                  style={linkStyles}
+                  style={{color:"white"}}
                   sx={{ mr:10 }}
                 >
                   Home
                 </NavLink>
-              </Typography>
-
-              <Typography
-                variant="h6"
-                noWrap
-                paddingRight="5em"
-                >
+                </Typography>
+              </Button>
+              
+              <Button variant="text">
+                <Typography
+                  variant="h6"
+                  noWrap
+                  paddingRight={"2.5em"}
+                  paddingLeft={"2.5em"}
+                  >
                   <NavLink
                     to="/characters"
                     style={{color:"white"}}
                   >
                     Characters
                   </NavLink>
-                </Typography>
-
-                <Typography
-                  variant="h6"
-                  noWrap 
-                  component="div" 
-                  color="white"
-                  sx={{ flexGrow: 1 }}>
-                  <NavLink
-                    to="/addCharacter"
-                    style={{color:"white"}}
-                  >
-                    Add Characters
-                  </NavLink>
                   </Typography>
-                  
-                  <Autocomplete spacing={2} sx={{ width: 200,pr:3 }}
+                </Button>
+
+                <Button variant="text">
+                  <Typography
+                    variant="h6"
+                    noWrap 
+                    paddingRight={"2.5em"}
+                    paddingLeft={"2.5em"}
+                    sx={{ flexGrow: 1 }}>
+                    <NavLink
+                      to="/addCharacter"
+                      style={{color:"white"}}
+                    >
+                      Add Characters
+                    </NavLink>
+                  </Typography>
+                </Button>
+
+                  <Autocomplete spacing={2} sx={{ width: 300,pr:3, pl:5 }}
                     freeSolo
                     
                     options={allCharacters}
@@ -117,7 +135,16 @@ function NavBar({allCharacters}) {
                       }}
                     />)}
                   />
-                  <SortIcon style={{fontSize:"1.9em"}}/>
+                 
+                  <IconButton  onClick={() => setOpen(true)}>
+                    <SortIcon style={{fontSize:"1.9em",color:"white"}}/>
+                  </IconButton>
+                  <Drawer open={open} anchor={"right"} onClose={() => setOpen(false)}>
+                    {getList()}
+                  </Drawer>
+                        
+                      
+                    
                 </Toolbar>
               </AppBar>
             </Box>

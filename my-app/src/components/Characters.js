@@ -10,7 +10,7 @@ function Characters({allCharacters}){
    })
 
     return (
-        <Container>
+        <Container style={{paddingTop: "6em"}}>
             <Card.Group itemsPerRow={5}>
                 {characterDisplay}
             </Card.Group>
