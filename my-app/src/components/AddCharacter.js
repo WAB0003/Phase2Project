@@ -1,31 +1,86 @@
 import React from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form , Container, Icon} from 'semantic-ui-react'
+import { useState } from 'react'
 
 
-function AddCharacter ({character}) { 
+function AddCharacter ({baseURL}) { 
+
+  const [formData, setFormData] = useState({
+    name: "",
+    special: "",
+    images:"",
+    seriesName: "",
+  })
+  //destructure formData into useable items
+  const {name, special, images, seriesName} = formData
+
+  const handleChange = (e) => {
+    setFormData({...formData,
+      [e.target.name] : e.target.value,
+    })
+  }
+  //!create a submit button event To send new player to Character list
+  const handleSubmit = (e) => {
+    e.preventDefault()
+  //*Create a new Object EXACTLY like the object being sent to server
+    const newPlayerObj = {
+        alsoAppearsIn: [
+         "N/A"
+        ],
+        availability: "N/A",
+        images:{
+          icon:"N/A",
+          portrait: images,
+        },
+        name:name,
+        order:"n/a",
+        special: [special],
+        tier: "N/A",
+        series:{
+          icon:"N/A",
+          name:seriesName,
+        }
+    }
+    console.log(newPlayerObj)
+
+    //*Add newPlayer to data base
+    fetch(baseURL, {
+      method: "POST",
+      headers: {
+        "Content-Type":"application/json",
+      },
+      body: JSON.stringify(newPlayerObj)
+    })
+
+
+
+
+
+  }
 
   return (
-    <Form>
-      <Form.Field>
-        <label>New Player Name</label>
-        <input placeholder='Enter Name Here' />
-      </Form.Field>
-      <Form.Field>
-        <label>Special Moves</label>
-        <input placeholder='Enter Any Special Moves' />
-      </Form.Field>
-      <Form.Field>
-        <label>Image</label>
-        <input placeholder='Enter Image URL' />
-      </Form.Field>
-      <Form.Field>
-        <label>Series</label>
-        <input placeholder='Enter Game Series' />
-      </Form.Field>
-      <Button type='submit'>Submit</Button>
-    </Form>
+    <Container style={{paddingTop: "6em"}} >
+      <Form >
+        <Form.Field width={5}>
+          <label>New Player Name</label>
+          <input placeholder='Enter Name Here' name="name" value={name} onChange={handleChange}/>
+        </Form.Field>
+        <Form.Field width={5}>
+          <label>Special Moves</label>
+          <input placeholder='Enter Any Special Moves' name="special" value={special} onChange={handleChange}/>
+        </Form.Field>
+        <Form.Field width={5}>
+          <label>Image</label>
+          <input placeholder='Enter Image URL' name="images" value={images} onChange={handleChange}/>
+        </Form.Field>
+        <Form.Field width={5}>
+          <label>Series</label>
+          <input placeholder='Enter Game Series' name="seriesName" value={seriesName} onChange={handleChange}/>
+        </Form.Field>
+        <Button type='submit'onClick={handleSubmit} >Add New Player</Button>
+      </Form>
+    </Container>
   )
-
  
 }
 export default AddCharacter;
