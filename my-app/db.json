@@ -1059,6 +1059,7 @@
   },
   "name":"Mii Brawler",
   "order":"51",
+  "special": ["N/A"],
   "series":{
     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1595552332/Series/ofc2xcyawclffowvoqu1.svg",
     "name":"Super Smash Bros."
@@ -1075,6 +1076,7 @@
   },
   "name":"Mii Swordfighter",
   "order":"52",
+  "special": ["N/A"],
   "series":{
     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1595552332/Series/ofc2xcyawclffowvoqu1.svg",
     "name":"Super Smash Bros."
@@ -1091,6 +1093,7 @@
   },
   "name":"Mii Gunner",
   "order":"53",
+  "special": ["N/A"],
   "series":{
     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1595552332/Series/ofc2xcyawclffowvoqu1.svg",
     "name":"Super Smash Bros."

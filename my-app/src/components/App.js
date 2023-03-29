@@ -27,7 +27,7 @@ function App() {
         <Route exact path="/" element={<Home />}/>
         <Route path="/characters" element={<Characters allCharacters={allCharacters} />}/>
         <Route path="/favorites" element={<Favorites />}/>
-        <Route path="/addCharacter" element={<AddCharacter />}/>
+        <Route path="/addCharacters" element={<AddCharacter />}/>
     </Routes>
     </div>
   );

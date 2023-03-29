@@ -52,9 +52,10 @@ function NavBar({allCharacters}) {
                 paddingLeft={"1em"}>
               <NavLink
                   to="/"
-                  style={{color:"white"}}
-                  >
-                 Home 
+                  style={linkStyles}
+                  sx={{ mr:10 }}
+                >
+                  Home
                 </NavLink>
               </Typography>
 
