@@ -25,7 +25,8 @@
       "series": {
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501902/Series/mario_ncgezx.svg",
         "name": "Mario"
-      }
+      },
+      "favorite":"yes"
     },
     {
       "id": 2,

@@ -1,20 +1,22 @@
-import React, { useState } from 'react';
 
-function Favorites({ item }) {
-  const [isFavorite, setIsFavorite] = useState(false);
+import React from 'react';
+import { Container, Card } from 'semantic-ui-react'; 
+import FavoriteCard from './FavoriteCard';
 
-  const handleToggleFavorite = () => {
-    setIsFavorite(!isFavorite);
-  }
+function Favorites ({favoriteCharacters}){
 
-  return (
-    <div>
-      <button onClick={handleToggleFavorite}>
-        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
-      </button>
-      {isFavorite && <p>{item.title} has been added to your favorites!</p>}
-    </div>
-  );
+   const characterDisplay = favoriteCharacters.map((character,index)=>{
+    console.log(character.id)
+        return <FavoriteCard key={index} character={character} />
+   })
+
+    return (
+        <Container style={{paddingTop: "6em"}}>
+            <Card.Group itemsPerRow={5}>
+                {characterDisplay}
+            </Card.Group>
+        </Container>
+    )
 }
 
 export default Favorites;
