@@ -28,7 +28,7 @@ function App() {
   }
 
   //!Create a function that adds favorite character to favorite list
- const handleAddFavorites = (favCharacter)=>{
+ const handleFavorites = (favCharacter)=>{
   const updatedCharacters = allCharacters.map((character)=>{
     if(character.id===favCharacter.id) {
       return favCharacter;
@@ -45,8 +45,8 @@ function App() {
     <NavBar allCharacters={allCharacters}/>
     <Routes>
         <Route exact path="/" element={<Home />}/>
-        <Route path="/characters" element={<Characters allCharacters={allCharacters} handleAddFavorites={handleAddFavorites}/>}/>
-        <Route path="/favorites" element={<Favorites allCharacters={allCharacters}/>}/>
+        <Route path="/characters" element={<Characters allCharacters={allCharacters} handleFavorites={handleFavorites}/>}/>
+        <Route path="/favorites" element={<Favorites allCharacters={allCharacters} handleFavorites={handleFavorites}/>}/>
         <Route path="/addCharacter" element={<AddCharacter baseURL={baseURL} handleNewCharacter={handleNewCharacter} />}/>
     </Routes>
     </div>

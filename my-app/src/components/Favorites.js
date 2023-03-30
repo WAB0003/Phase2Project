@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, Card } from 'semantic-ui-react'; 
 import CharacterCard from './CharacterCard';
 
-function Favorites ({allCharacters}){
+function Favorites ({allCharacters, handleFavorites}){
 
     const favoriteCharacters = allCharacters.filter((character)=>{
         if(character.favorite==="yes"){
@@ -13,7 +13,7 @@ function Favorites ({allCharacters}){
 
    const characterDisplay = favoriteCharacters.map((character,index)=>{
     console.log(character.id)
-        return <CharacterCard key={index} character={character} />
+        return <CharacterCard key={index} character={character} handleFavorites={handleFavorites}/>
    })
 
     return (

@@ -2,10 +2,10 @@ import React from 'react';
 import CharacterCard from "./CharacterCard";
 import { Container, Card } from 'semantic-ui-react'; 
 
-function Characters({allCharacters, handleAddFavorites}){
+function Characters({allCharacters, handleFavorites}){
 
    const characterDisplay = allCharacters.map((character)=>{
-        return <CharacterCard key={character.id} character={character} handleAddFavorites={handleAddFavorites} />
+        return <CharacterCard key={character.id} character={character} handleFavorites={handleFavorites} />
    })
 
     return (

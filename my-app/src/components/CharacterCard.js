@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Card, Button, Image, List } from 'semantic-ui-react'; 
 
 
-function CharacterCard({character , handleAddFavorites}) {
+function CharacterCard({character , handleFavorites}) {
     const{name, images, special, tier} = character
     const[isFav, setIsFav] = useState(character.favorite==="yes")
 
@@ -12,7 +12,21 @@ function CharacterCard({character , handleAddFavorites}) {
         return <List.Item key={index} >{move}</List.Item> 
    })
 
+   //!function to handle which button is shown. (Add or Remove)
+   function handleButton () {
+    if(isFav){
+        return (
+            <Button fluid onClick={handleRemoveFavClick}>Remove from Favorites</Button>
+        )
+    }else{
+        return(
+            <Button fluid onClick={handleFavClick} >Add to Favorites</Button>
+        )
+    }
 
+   }
+
+   //!Handles the click of the favorite button
    const handleFavClick = () => {
     setIsFav(!isFav)
     fetch (`http://localhost:3001/characters/${character.id}`, {
@@ -25,21 +39,27 @@ function CharacterCard({character , handleAddFavorites}) {
         })
     })
     .then((r)=>r.json())
-    .then(updatedCharacter=>handleAddFavorites(updatedCharacter))
+    .then(updatedCharacter=>handleFavorites(updatedCharacter))
+   }
+   
+   //! Handles the removal of a favorite character from data base
+   const handleRemoveFavClick = () => {
+    setIsFav(!isFav)
+    fetch (`http://localhost:3001/characters/${character.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type":"application/json",
+        },
+        body: JSON.stringify({
+            favorite : "no",
+        })
+    })
+    .then((r)=>r.json())
+    .then(updatedCharacter=>handleFavorites(updatedCharacter))
    }
 
-   function handleButton () {
-    if(isFav){
-        return (
-            <Button>Already Added</Button>
-        )
-    }else{
-        return(
-            <Button fluid onClick={handleFavClick} >Add to Favorites</Button>
-        )
-    }
 
-   }
+ 
   
     return(
         <Card>

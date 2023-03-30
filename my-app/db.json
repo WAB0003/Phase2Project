@@ -26,7 +26,7 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501902/Series/mario_ncgezx.svg",
         "name": "Mario"
       },
-      "favorite": "yes"
+      "favorite": "no"
     },
     {
       "id": 2,
@@ -54,7 +54,7 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501875/Series/donkey-kong_tppruc.svg",
         "name": "Donkey Kong"
       },
-      "favorite": "yes"
+      "favorite": "no"
     },
     {
       "id": 3,
@@ -82,7 +82,7 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501930/Series/the-legend-of-zelda_naf34b.svg",
         "name": "The Legend of Zelda"
       },
-      "favorite": "yes"
+      "favorite": "no"
     },
     {
       "id": 4,
@@ -110,7 +110,7 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1595194655/Series/fxdmwjgnygjbaetfvjzy.svg",
         "name": "Metroid"
       },
-      "favorite": "yes"
+      "favorite": "no"
     },
     {
       "id": 5,
@@ -133,7 +133,7 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1595194655/Series/fxdmwjgnygjbaetfvjzy.svg",
         "name": "Metroid"
       },
-      "favorite": "yes"
+      "favorite": "no"
     },
     {
       "id": 6,
@@ -160,7 +160,8 @@
       "series": {
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1595197033/Series/murkcxf7ykhhz3muwo7y.svg",
         "name": "Yoshi"
-      }
+      },
+      "favorite": "no"
     },
     {
       "id": 7,
