@@ -1,0 +1,19 @@
+body, html {
+    height: 100%;
+}
+.bg {
+      background-image: url("https://media.comicbook.com/2018/11/super-smash-bros-1144585.jpeg");
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+/* https://images.nintendolife.com/5f9963cb6598a/smash-ultimate.large.jpg
+/* https://www.gameuidatabase.com/uploads/SuperSmashBrosUltimate04252020-082640_thumb.jpg */
+/* https://www.cnet.com/a/img/resize/d7395a6aa09ed259ad0ef3b98341df797b39ad5e/hub/2018/06/12/e913e102-1d4e-4366-bf1c-c8023c5ccd1e/super-smash-bros-ultimate-nintendo.png?auto=webp&fit=crop&height=675&width=1200 */
+/* https://i.pcmag.com/imagery/articles/05YxWpT1Brox74EoLvYuiwx-5.fit_lim.size_1600x900.v1633988232.jpg */
+/* https://static0.gamerantimages.com/wordpress/wp-content/uploads/2022/10/Super-Smash-Bros-Movie-Edit.jpg?q=50&fit=contain&w=1140&h=&dpr=1.5 */
+/* https://media.comicbook.com/2018/11/super-smash-bros-1144585.jpeg */
+/* https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,q_60,w_965/203f43df54b075c5c940767c99f2487c.jpg */
+/* https://static.invenglobal.com/upload/image/2022/02/11/r1644622377072442.jpeg */
