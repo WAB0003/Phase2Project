@@ -3,9 +3,26 @@
 body, html {
     height: 100%;
 }
+
+.homeBG {
+    background-image: url(../../public/backgroundImages/BackgroundImg1.jpg);
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-name: changingBackground;
+    animation-duration: 20s ;
+    animation-iteration-count: infinite;
+  }
+  @keyframes changingBackground {
+      0% {background-image: url(../../public/backgroundImages/BackgroundImg1.jpg);}
+      33% {background-image: url(../../public/backgroundImages/BackgroundImg2.png);}
+      66% {background-image: url(../../public/backgroundImages/BackgroundImg3.jpeg);}
+      100% {background-image: url(../../public/backgroundImages/BackgroundImg1.jpg);}
+}
+
 .bg {
-      /* background-image: url("https://media.comicbook.com/2018/11/super-smash-bros-1144585.jpeg"); */
-      background-image: url(./backgroundImg.jpg);
+      background-image: url(../../public/backgroundImages/BackgroundImg1.jpg);
       height: 100vh;
       background-position: center;
       background-repeat: no-repeat;
@@ -38,11 +55,9 @@ body, html {
     background: fixed;
     border: 10px green;
     background-color: rgb(249, 249, 249);
-    
-
     padding:20px;
-
 }
+
 
 /* https://images.nintendolife.com/5f9963cb6598a/smash-ultimate.large.jpg
 /* https://www.gameuidatabase.com/uploads/SuperSmashBrosUltimate04252020-082640_thumb.jpg */
