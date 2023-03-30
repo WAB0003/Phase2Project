@@ -3,10 +3,9 @@ import React, { useState } from 'react'
 import { Card, Button, Image, List } from 'semantic-ui-react'; 
 
 
-function CharacterCard({character , addToFavorites}) {
+function CharacterCard({character , handleAddFavorites}) {
     const{name, images, special, tier} = character
-    // const[isFav, setIsFav] = useState(character.favorite==="yes")
-    const[isFav, setIsFav] = useState(false)
+    const[isFav, setIsFav] = useState(character.favorite==="yes")
 
 
     const displaySpecials = special.map((move,index)=>{
@@ -15,8 +14,18 @@ function CharacterCard({character , addToFavorites}) {
 
 
    const handleFavClick = () => {
-    setIsFav((isFav) => !isFav)
-    addToFavorites(character)
+    setIsFav(!isFav)
+    fetch (`http://localhost:3001/characters/${character.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type":"application/json",
+        },
+        body: JSON.stringify({
+            favorite : "yes",
+        })
+    })
+    .then((r)=>r.json())
+    .then(updatedCharacter=>handleAddFavorites(updatedCharacter))
    }
 
    function handleButton () {

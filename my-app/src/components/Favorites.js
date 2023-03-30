@@ -1,13 +1,19 @@
 
 import React from 'react';
 import { Container, Card } from 'semantic-ui-react'; 
-import FavoriteCard from './FavoriteCard';
+import CharacterCard from './CharacterCard';
 
-function Favorites ({favoriteCharacters}){
+function Favorites ({allCharacters}){
+
+    const favoriteCharacters = allCharacters.filter((character)=>{
+        if(character.favorite==="yes"){
+            return character
+        }
+    })
 
    const characterDisplay = favoriteCharacters.map((character,index)=>{
     console.log(character.id)
-        return <FavoriteCard key={index} character={character} />
+        return <CharacterCard key={index} character={character} />
    })
 
     return (

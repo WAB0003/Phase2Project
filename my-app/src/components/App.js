@@ -12,7 +12,7 @@ const baseURL = "http://localhost:3001/characters/"
 
 function App() {
   const [allCharacters,setAllCharacter]=useState([])
-  const [favoriteCharacters, setFavChars] = useState([])
+  
   
   useEffect(()=>{
     fetch(baseURL)
@@ -28,9 +28,16 @@ function App() {
   }
 
   //!Create a function that adds favorite character to favorite list
-  const addToFavorites = (addedCharacter) => {
-    setFavChars(currentList => [...currentList,addedCharacter])
-  }
+ const handleAddFavorites = (favCharacter)=>{
+  const updatedCharacters = allCharacters.map((character)=>{
+    if(character.id===favCharacter.id) {
+      return favCharacter;
+    } else {
+      return character;
+    }
+  })
+  setAllCharacter(updatedCharacters)
+ }
 
 
   return (
@@ -38,8 +45,8 @@ function App() {
     <NavBar allCharacters={allCharacters}/>
     <Routes>
         <Route exact path="/" element={<Home />}/>
-        <Route path="/characters" element={<Characters allCharacters={allCharacters} addToFavorites={addToFavorites}/>}/>
-        <Route path="/favorites" element={<Favorites favoriteCharacters={favoriteCharacters}/>}/>
+        <Route path="/characters" element={<Characters allCharacters={allCharacters} handleAddFavorites={handleAddFavorites}/>}/>
+        <Route path="/favorites" element={<Favorites allCharacters={allCharacters}/>}/>
         <Route path="/addCharacter" element={<AddCharacter baseURL={baseURL} handleNewCharacter={handleNewCharacter} />}/>
     </Routes>
     </div>
