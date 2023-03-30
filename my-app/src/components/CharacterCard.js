@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { Card, Button, Image, List } from 'semantic-ui-react'; 
 
 
-function CharacterCard({character , handleFavorites}) {
+function CharacterCard({character , handleFavorites, baseURL }) {
     const{name, images, special, tier} = character
     const[isFav, setIsFav] = useState(character.favorite==="yes")
 
@@ -29,7 +29,7 @@ function CharacterCard({character , handleFavorites}) {
    //!Handles the click of the favorite button
    const handleFavClick = () => {
     setIsFav(!isFav)
-    fetch (`http://localhost:3001/characters/${character.id}`, {
+    fetch (baseURL+character.id, {
         method: "PATCH",
         headers: {
           "Content-Type":"application/json",
@@ -45,7 +45,7 @@ function CharacterCard({character , handleFavorites}) {
    //! Handles the removal of a favorite character from data base
    const handleRemoveFavClick = () => {
     setIsFav(!isFav)
-    fetch (`http://localhost:3001/characters/${character.id}`, {
+    fetch (baseURL+character.id, {
         method: "PATCH",
         headers: {
           "Content-Type":"application/json",

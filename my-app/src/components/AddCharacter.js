@@ -65,27 +65,35 @@ function AddCharacter ({baseURL, handleNewCharacter}) {
   }
 
   return (
-    <Container style={{paddingTop: "6em"}} >
-      <Form >
-        <Form.Field width={5}>
-          <label>New Player Name</label>
-          <input placeholder='Enter Name Here' name="name" value={name} onChange={handleChange}/>
-        </Form.Field>
-        <Form.Field width={5}>
-          <label>Special Moves</label>
-          <input placeholder='Enter Any Special Moves' name="special" value={special} onChange={handleChange}/>
-        </Form.Field>
-        <Form.Field width={5}>
-          <label>Image</label>
-          <input placeholder='Enter Image URL' name="images" value={images} onChange={handleChange}/>
-        </Form.Field>
-        <Form.Field width={5}>
-          <label>Series</label>
-          <input placeholder='Enter Game Series' name="seriesName" value={seriesName} onChange={handleChange}/>
-        </Form.Field>
-        <Button type='submit'onClick={handleSubmit} >Add New Player</Button>
-      </Form>
-    </Container>
+    <div className='bg'>
+      <div className='formBorder' style={{paddingTop: "6em"}}>
+        <Container >
+          <Form >
+            <Form.Field >
+              <label>New Player Name</label>
+              <input placeholder='Enter Name Here' name="name" value={name} onChange={handleChange}/>
+            </Form.Field>
+            <Form.Field >
+              <label>Special Moves</label>
+              <input placeholder='Enter Any Special Moves' name="special" value={special} onChange={handleChange}/>
+            </Form.Field>
+            <Form.Field >
+              <label>Image</label>
+              <input placeholder='Enter Image URL' name="images" value={images} onChange={handleChange}/>
+            </Form.Field>
+            <Form.Field >
+              <label>Series</label>
+              <input placeholder='Enter Game Series' name="seriesName" value={seriesName} onChange={handleChange}/>
+            </Form.Field>
+            <Button type='submit'onClick={handleSubmit} >Add New Player</Button>
+          </Form>
+        </Container>
+
+
+      </div>
+    </div>
+
+
   )
  
 }

@@ -45,9 +45,9 @@ function App() {
     <NavBar allCharacters={allCharacters}/>
     <Routes>
         <Route exact path="/" element={<Home />}/>
-        <Route path="/characters" element={<Characters allCharacters={allCharacters} handleFavorites={handleFavorites}/>}/>
-        <Route path="/favorites" element={<Favorites allCharacters={allCharacters} handleFavorites={handleFavorites}/>}/>
-        <Route path="/addCharacter" element={<AddCharacter baseURL={baseURL} handleNewCharacter={handleNewCharacter} />}/>
+        <Route path="/characters" element={<Characters allCharacters={allCharacters} handleFavorites={handleFavorites} baseURL={baseURL}/>}/>
+        <Route path="/favorites" element={<Favorites allCharacters={allCharacters} handleFavorites={handleFavorites} baseURL={baseURL}/>}/>
+        <Route path="/addCharacter" element={<AddCharacter handleNewCharacter={handleNewCharacter} baseURL={baseURL}/>}/>
     </Routes>
     </div>
   );

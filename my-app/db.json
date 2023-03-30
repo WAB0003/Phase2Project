@@ -26,7 +26,7 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501902/Series/mario_ncgezx.svg",
         "name": "Mario"
       },
-      "favorite": "no"
+      "favorite": "yes"
     },
     {
       "id": 2,
@@ -82,7 +82,7 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501930/Series/the-legend-of-zelda_naf34b.svg",
         "name": "The Legend of Zelda"
       },
-      "favorite": "no"
+      "favorite": "yes"
     },
     {
       "id": 4,
@@ -2036,6 +2036,28 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1595700128/Series/qnwoxcjwqlxxt8sxwfbj.svg",
         "name": "Minecraft"
       }
+    },
+    {
+      "alsoAppearsIn": [
+        "N/A"
+      ],
+      "availability": "Starter",
+      "images": {
+        "icon": "",
+        "portrait": "https://static.wikia.nocookie.net/p__/images/f/ff/Joel.png/revision/latest?cb=20170129035146&path-prefix=protagonist"
+      },
+      "name": "Joel Miller",
+      "order": "1",
+      "special": [
+        "Kick Butt"
+      ],
+      "tier": "A",
+      "series": {
+        "icon": "",
+        "name": "Last of Us"
+      },
+      "id": 85,
+      "favorite": "no"
     }
   ]
 }
