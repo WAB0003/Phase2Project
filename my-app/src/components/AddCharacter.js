@@ -71,18 +71,22 @@ function AddCharacter ({baseURL, handleNewCharacter}) {
           <Form >
             <Form.Field >
               <label>New Player Name</label>
+              <p>ex: Joel Miller</p>
               <input placeholder='Enter Name Here' name="name" value={name} onChange={handleChange}/>
             </Form.Field>
             <Form.Field >
               <label>Special Moves</label>
+              <p>ex: Kick Butt</p>
               <input placeholder='Enter Any Special Moves' name="special" value={special} onChange={handleChange}/>
             </Form.Field>
             <Form.Field >
               <label>Image Url</label>
+              <p>ex: https://upload.wikimedia.org/wikipedia/en/9/94/Joel_in_The_Last_of_Us.png</p>
               <input placeholder='Enter Image URL' name="images" value={images} onChange={handleChange}/>
             </Form.Field>
             <Form.Field >
               <label>Series</label>
+              <p>ex: The Last of Us</p>
               <input placeholder='Enter Game Series' name="seriesName" value={seriesName} onChange={handleChange}/>
             </Form.Field>
             <Button type='submit'onClick={handleSubmit} >Add New Player</Button>

@@ -2037,50 +2037,6 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1595700128/Series/qnwoxcjwqlxxt8sxwfbj.svg",
         "name": "Minecraft"
       }
-    },
-    {
-      "alsoAppearsIn": [
-        "N/A"
-      ],
-      "availability": "Starter",
-      "images": {
-        "icon": "",
-        "portrait": "https://static.wikia.nocookie.net/p__/images/f/ff/Joel.png/revision/latest?cb=20170129035146&path-prefix=protagonist"
-      },
-      "name": "Joel Miller",
-      "order": "1",
-      "special": [
-        "Kick Butt"
-      ],
-      "tier": "A",
-      "series": {
-        "icon": "",
-        "name": "Last of Us"
-      },
-      "id": 85,
-      "favorite": "no"
-    },
-    {
-      "alsoAppearsIn": [
-        "N/A"
-      ],
-      "availability": "Starter",
-      "images": {
-        "icon": "",
-        "portrait": "https://upload.wikimedia.org/wikipedia/en/9/94/Joel_in_The_Last_of_Us.png"
-      },
-      "name": "Joel Miller",
-      "order": "1",
-      "special": [
-        "Murder"
-      ],
-      "tier": "A",
-      "series": {
-        "icon": "",
-        "name": "Last of us"
-      },
-      "id": 86,
-      "favorite": "yes"
     }
   ]
 }
