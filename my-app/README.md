@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Phase 2 Project - `Super Smash Bros : Character Portal`
+Group project: Bill, James, Holden
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Description
+The webpage displayed by the code herein is an online portal where users can view information about characters from all Super Smash Brothers games. Additional components of the application will give the user the freedom to add existing characters to their list of favorite characters, as well as add a new character to the list of existing characters. Instead of using an external API, this code mimics an external server by running the data in the local `db.json` file as a server. For this programe to work, the following commands must be performed:
 
-## Available Scripts
+```
+cd my-app
+```
+```
+npm install
+```
+```
+npm run server
+```
+This will establish the local `db.json` file as the local server to pull in data about all the Super Smash Bros characters.
 
-In the project directory, you can run:
+Next, create a separate terminal and type the following commands:
+```
+cd my-app
+npm start
+```
+# How to use this Project
+As a user, I can:
+* Using the `Navbar` at the top of the page, navigate to (4) separate components at the top of the screen labeled **Home**, **Characters**, **Add Character**, and **Favorites**. When each of these components has been clicked, the url at the top of web page will update accordingly.
+## Characters Page
+As a user, I can:
+* Use the Navbar at the top of the page to navigate to any of the other pages. 
+* View a list of **ALL** characters in the SSB universe. 
+* Interact with the `Add to Favorites` button or the `Remove from Favorites` on any of the characters. Upon clicking this button, the player card will either be added or removed from a list of characters displayed on the **Favorties** page. 
+* `Stretch Goals:` Create a Search bar and/or filter to quickly find characters.
+## Add Character Page
+Everyone that has played SSB has always wondered what if [ *insert character name* ] from [ *insert game* ] was a character. Well, now you can! As a user, I can:
+* Use the Navbar at the top of the page to navigate to any of the other pages.
+* Fill out a controlled form for a *New Character* of your choice. 
+* Simply type information in the listed fields and click `Add New Player`. This will add the new player to the list of characters on the **Characters** page.
+## Favorites Page
+Very similar to the **Characters** page, as a user, I can:
+* Use the Navbar at the top of the page to navigate to any of the other pages. 
+* View a list of **Favorite** characters that have been selected. 
+* Interact with the `Remove from Favorites` button on any of the characters. Upon clicking this button, the player card will be removed from the page.
 
-### `npm start`
+# Methodologies Employed
+This web application focused on the following methodologies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Create a single-page web application using Create React App
+* Utilizing (3) HTTP methods: GET, POST, and PATCH
+* Use React State to optimistically render the different pages and hold data for a controlled form
+* Use React Router, Routes, and NavLink to visibly affect the web applications url.

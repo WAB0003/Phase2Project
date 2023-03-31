@@ -78,7 +78,7 @@ function AddCharacter ({baseURL, handleNewCharacter}) {
               <input placeholder='Enter Any Special Moves' name="special" value={special} onChange={handleChange}/>
             </Form.Field>
             <Form.Field >
-              <label>Image</label>
+              <label>Image Url</label>
               <input placeholder='Enter Image URL' name="images" value={images} onChange={handleChange}/>
             </Form.Field>
             <Form.Field >

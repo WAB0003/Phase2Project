@@ -82,7 +82,7 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1594501930/Series/the-legend-of-zelda_naf34b.svg",
         "name": "The Legend of Zelda"
       },
-      "favorite": "no"
+      "favorite": "yes"
     },
     {
       "id": 4,
@@ -110,7 +110,7 @@
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1595194655/Series/fxdmwjgnygjbaetfvjzy.svg",
         "name": "Metroid"
       },
-      "favorite": "no"
+      "favorite": "yes"
     },
     {
       "id": 5,
@@ -215,7 +215,8 @@
       "series": {
         "icon": "https://res.cloudinary.com/dfen7mkm8/image/upload/v1595198574/Series/g6sv3naruucu8qs0vv3u.svg",
         "name": "Star Fox"
-      }
+      },
+      "favorite": "no"
     },
     {
       "id": 9,
@@ -2058,6 +2059,28 @@
       },
       "id": 85,
       "favorite": "no"
+    },
+    {
+      "alsoAppearsIn": [
+        "N/A"
+      ],
+      "availability": "Starter",
+      "images": {
+        "icon": "",
+        "portrait": "https://upload.wikimedia.org/wikipedia/en/9/94/Joel_in_The_Last_of_Us.png"
+      },
+      "name": "Joel Miller",
+      "order": "1",
+      "special": [
+        "Murder"
+      ],
+      "tier": "A",
+      "series": {
+        "icon": "",
+        "name": "Last of us"
+      },
+      "id": 86,
+      "favorite": "yes"
     }
   ]
 }

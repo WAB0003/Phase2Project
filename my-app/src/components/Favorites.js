@@ -12,7 +12,6 @@ function Favorites ({allCharacters, handleFavorites, baseURL}){
     })
 
    const characterDisplay = favoriteCharacters.map((character,index)=>{
-    console.log(character.id)
         return <CharacterCard key={index} character={character} handleFavorites={handleFavorites} baseURL={baseURL}/>
    })
 
