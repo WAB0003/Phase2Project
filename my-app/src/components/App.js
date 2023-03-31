@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div>
-    <NavBar allCharacters={allCharacters}/>
+    <NavBar />
     <Routes>
         <Route exact path="/" element={<Home />}/>
         <Route path="/characters" element={<Characters allCharacters={allCharacters} />}/>

@@ -935,6 +935,7 @@
   "name":"Wolf",
   "order":"44",
   "special": ["Blaster","Wolf Flash","Fire Wolf","Reflector"],
+  "tier":"A+",
   "series":{
     "icon":"https://res.cloudinary.com/dfen7mkm8/image/upload/v1595198574/Series/g6sv3naruucu8qs0vv3u.svg",
     "name":"Star Fox"
