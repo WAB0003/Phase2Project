@@ -52,6 +52,9 @@ function Characters({allCharacters, handleFavorites, baseURL}){
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
         borderColor: 'black',
+        background: '#FAF9F6',
+        opacity: 0.65,
+        
       },
       '&:hover fieldset': {
         borderColor: '#89CFF0',
@@ -82,7 +85,7 @@ function Characters({allCharacters, handleFavorites, baseURL}){
         <div className='bg'>
         <Container style={{paddingTop: "6em"}}>
             <Grid item xs={6} style={{textAlign: "right",display:"flex"}}>
-            <Autocomplete spacing={2} sx={{ width: 300,pr:4, pl:5 }}
+            <Autocomplete spacing={2} sx={{ width: 300,pr:4, pl:5}}
                     freeSolo
                     onChange={handleSubmit}
                     options={allCharacters}
@@ -90,7 +93,7 @@ function Characters({allCharacters, handleFavorites, baseURL}){
                     
                     renderOption={(props,character) => (
                       <Box component="li" 
-                      sx={{ '& > img': { mr: 2, flexShrink: 0 } }} 
+                      sx={{ '& > img': { mr: 2, flexShrink: 0} }} 
                       {...props}
                       >
                       <img
