@@ -65,8 +65,8 @@ function AddCharacter ({baseURL, handleNewCharacter}) {
   }
 
   return (
-    <div className='bg' style={{paddingTop: "7em"}}>
-      <div className='formBorder' style={{paddingTop: "2em"}}>
+    <div className='bg' style={{paddingTop: "7%"}}>
+      <div className='formBorder' style={{paddingTop: "2em2%"}}>
         <Container >
           <Form >
             <Form.Field >
@@ -92,8 +92,6 @@ function AddCharacter ({baseURL, handleNewCharacter}) {
             <Button type='submit'onClick={handleSubmit} >Add New Player</Button>
           </Form>
         </Container>
-
-
       </div>
     </div>
 
