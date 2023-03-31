@@ -15,6 +15,7 @@ function FilterDisplay({tier,setTier,avail,setAvail,appeared,setAppeared}){
     
     const handleChange = (event) => {
         setTier(event.target.value);
+        
     };
     const handleChange2 = (event) => {
         setAvail(event.target.value);

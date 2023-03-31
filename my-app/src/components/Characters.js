@@ -17,12 +17,103 @@ import "./Home.css"
 function Characters({allCharacters, handleFavorites, baseURL}){
     const [open, setOpen] = useState(false);
     const [search,setSearch] = useState(null)
-    const [tier, setTier] = useState('');
-    const [avail, setAvail] = useState('');
-    const [appeared,setAppeared] = useState('');
-  
- 
-    const characterDisplay = allCharacters.filter((character) =>{
+    const [tier, setTier] = useState(null);
+    const [avail, setAvail] = useState(null);
+    const [appeared,setAppeared] = useState(null);
+
+  let characterDisplay;
+
+if (search) {
+  characterDisplay = allCharacters
+    .filter((character) => {
+      if (search === null){
+        return character
+    }else if (search === character){
+        return character
+    }
+    })
+    .map((character) => {
+      return (
+        <CharacterCard
+          key={character.id}
+          character={character}
+          handleFavorites={handleFavorites}
+          baseURL={baseURL}
+        />
+      );
+    });
+} else if (tier) {
+  characterDisplay = allCharacters
+    .filter((character) => {
+      if(tier === null){
+        return character
+    }else if(tier===character.tier){
+        return character
+    }
+    })
+    .map((character) => {
+      return (
+        <CharacterCard
+          key={character.id}
+          character={character}
+          handleFavorites={handleFavorites}
+          baseURL={baseURL}
+        />
+      );
+    });
+} else if (avail) {
+  characterDisplay = allCharacters
+    .filter((character) => {
+      if(avail === null){
+        return character
+    }else if(avail===character.availability){
+        return character
+    }
+    })
+    .map((character) => {
+      return (
+        <CharacterCard
+          key={character.id}
+          character={character}
+          handleFavorites={handleFavorites}
+          baseURL={baseURL}
+        />
+      );
+    });
+}else if (appeared) {
+  characterDisplay = allCharacters
+    .filter((character) => {
+      if(appeared === null){
+        return character
+    }else if(appeared === character.alsoAppearsIn.map((game) =>{return game})){
+      return character
+    }
+  })
+    .map((character) => {
+      return (
+        <CharacterCard
+          key={character.id}
+          character={character}
+          handleFavorites={handleFavorites}
+          baseURL={baseURL}
+        />
+      );
+    });
+} else {
+  characterDisplay = allCharacters.map((character) => {
+    return (
+      <CharacterCard
+        key={character.id}
+        character={character}
+        handleFavorites={handleFavorites}
+        baseURL={baseURL}
+      />
+    );
+  });
+}
+
+
+    /*const characterDisplay = allCharacters.filter((character) =>{
         if (search === null){
             return character
         }else if (search === character){
@@ -30,7 +121,7 @@ function Characters({allCharacters, handleFavorites, baseURL}){
         }
     }).map((character)=>{
         return <CharacterCard key={character.id} character={character} handleFavorites={handleFavorites} baseURL={baseURL} />
-   })
+   })*/
 
    const handleSubmit = (event,value) =>{
         console.log(value);
@@ -74,13 +165,28 @@ function Characters({allCharacters, handleFavorites, baseURL}){
         setAppeared={setAppeared}
         />
     )
-    /*const characterDisplay2 = characterDisplay.filter((character) => {
-        if(tier === ''){
+    /*
+    const characterDisplay2 = allCharacters.filter((character) => {
+        if(tier === null){
             return character
-        }else if (tier === character.tier){
+        }else if(tier===character.tier){
             return character
         }
-    })*/
+    }).map((character)=>{
+      return <CharacterCard key={character.id} character={character} handleFavorites={handleFavorites} baseURL={baseURL} />
+    })
+
+    const characterDisplay3 = allCharacters.filter((character) => {
+      if(avail === null){
+          return character
+      }else if(avail===character.availability){
+          return character
+      }
+  }).map((character)=>{
+    return <CharacterCard key={character.id} character={character} handleFavorites={handleFavorites} baseURL={baseURL} />
+  })
+  */
+  
     return (
         <div className='bg'>
         <Container style={{paddingTop: "6em"}}>
@@ -120,7 +226,7 @@ function Characters({allCharacters, handleFavorites, baseURL}){
                   />
                  
                   <IconButton  onClick={() => setOpen(true)}>
-                    <SortIcon style={{fontSize:"1.9em",color:"black",pr:10}}/>
+                    <SortIcon style={{fontSize:"2.1em",color:"White",pr:10}}/>
                   </IconButton>
                   <Drawer open={open} anchor={"right"} onClose={() => setOpen(false)}>
                     {getList()}
