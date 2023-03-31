@@ -82,56 +82,55 @@ function Characters({allCharacters, handleFavorites, baseURL}){
         }
     })*/
     return (
-        <div className='characterBG {
-          '>
-        <Container  style={{paddingTop: "6em"}}>
-            <Grid item xs={6} style={{textAlign: "right",display:"flex"}}>
-            <Autocomplete spacing={2} sx={{ width: 300,pr:4, pl:5}}
-                    freeSolo
-                    onChange={handleSubmit}
-                    options={allCharacters}
-                    getOptionLabel={(character) => character.name}
+    <div className='characterBG' >
+      <Container  style={{paddingTop: "6em"}}>
+        <Grid item xs={6} style={{textAlign: "right",display:"flex"}}>
+          <Autocomplete spacing={2} sx={{ width: 300,pr:4, pl:5}}
+            freeSolo
+            onChange={handleSubmit}
+            options={allCharacters}
+            getOptionLabel={(character) => character.name}
                     
-                    renderOption={(props,character) => (
-                      <Box component="li" 
-                      sx={{ '& > img': { mr: 2, flexShrink: 0} }} 
-                      {...props}
-                      >
-                      <img
-                        loading="lazy"
-                        width="20"
-                        src={character.images.icon}
-                        srcSet={character.images.icon}
-                        alt=""
-                      />
-                      {character.name}
-                    </Box>
-                    )}
-                    renderInput={(params) => (
-                    <CssTextField
-                      {...params}
-                      style={{border:{color:'black'} }}
-                      label="Search"
-                      sx={{ input: { color: 'black' } }}
-                      InputProps={{
-                      ...params.InputProps,
-                      type: 'search',
-                      }}
-                    />)}
-                  />
+            renderOption={(props,character) => (
+              <Box component="li" 
+                sx={{ '& > img': { mr: 2, flexShrink: 0} }} 
+                  {...props}
+              >
+              <img
+                loading="lazy"
+                width="20"
+                src={character.images.icon}
+                srcSet={character.images.icon}
+                alt=""
+              />
+              {character.name}
+              </Box>
+            )}
+            renderInput={(params) => (
+            <CssTextField
+              {...params}
+              style={{border:{color:'black'} }}
+              label="Search"
+              sx={{ input: { color: 'black' } }}
+              InputProps={{
+                ...params.InputProps,
+                type: 'search',
+              }}
+            />)}
+          />
                  
-                  <IconButton  onClick={() => setOpen(true)}>
-                    <SortIcon style={{fontSize:"1.9em",color:"black",pr:10}}/>
-                  </IconButton>
-                  <Drawer open={open} anchor={"right"} onClose={() => setOpen(false)}>
-                    {getList()}
-                  </Drawer>
-                  </Grid>
-            <Card.Group itemsPerRow={5} style={{paddingTop:"2.5em"}}>
-                {characterDisplay}
-            </Card.Group>
-        </Container>
-        </div>
+          <IconButton  onClick={() => setOpen(true)}>
+          <SortIcon style={{fontSize:"1.9em",color:"black",pr:10}}/>
+          </IconButton>
+          <Drawer open={open} anchor={"right"} onClose={() => setOpen(false)}>
+          {getList()}
+          </Drawer>
+          </Grid>
+          <Card.Group itemsPerRow={5} style={{paddingTop:"2.5em"}}>
+          {characterDisplay}
+          </Card.Group>
+      </Container>
+    </div>
     )
 }
 
