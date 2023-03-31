@@ -1,8 +1,8 @@
 
-import React , {useState,useEffect}  from 'react';
+import React , {useState}  from 'react';
 import CharacterCard from "./CharacterCard";
 import { Container, Card } from 'semantic-ui-react'; 
-import { styled, alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import "./NavBar.css"
 import Box from '@mui/material/Box';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -25,8 +25,8 @@ function Characters({allCharacters, handleFavorites, baseURL}){
     const characterDisplay = allCharacters.filter((character) =>{
         if (search === null){
             return character
-        }else if (search === character){
-            return character
+        }else {
+            return character.name.includes(search)
         }
     }).map((character)=>{
         return <CharacterCard key={character.id} character={character} handleFavorites={handleFavorites} baseURL={baseURL} />
@@ -83,7 +83,7 @@ function Characters({allCharacters, handleFavorites, baseURL}){
     })*/
     return (
         <div className='bg'>
-        <Container style={{paddingTop: "6em"}}>
+        <Container className='bg' style={{paddingTop: "6em"}}>
             <Grid item xs={6} style={{textAlign: "right",display:"flex"}}>
             <Autocomplete spacing={2} sx={{ width: 300,pr:4, pl:5}}
                     freeSolo
