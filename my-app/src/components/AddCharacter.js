@@ -66,7 +66,7 @@ function AddCharacter ({baseURL, handleNewCharacter}) {
 
   return (
     <div className='bg'>
-      <div className='formBorder' style={{paddingTop: "6em"}}>
+      <div className='formBorder' style={{paddingTop: "7em"}}>
         <Container >
           <Form >
             <Form.Field >
