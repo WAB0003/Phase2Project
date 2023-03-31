@@ -1,12 +1,16 @@
 import React from 'react';
+import './Home.css'
+import logo from './Super-Smash-Bros.-Logo-PNG-Pic (1).png'
 
 
-function Home(){
-    return(
-    <div>
-       Home
-    </div>
-    )
-}
+const Home = () => {
+    return (
+      <div className="homeBG" style={{paddingTop: "6em"}}>
+        <img className='SSLogo' src={logo} alt="image"/>
+        <h1 className='homeTitle'>Character Portal</h1>
 
-export default Home;
+      </div>
+    );
+  }
+  
+  export default Home;

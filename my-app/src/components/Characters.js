@@ -10,11 +10,11 @@ import TextField from '@mui/material/TextField';
 import SortIcon from '@mui/icons-material/Sort';
 import IconButton from '@mui/material/IconButton';
 import Drawer from '@mui/material/Drawer';
-import "./NavBar.css";
 import FilterDisplay from "./filterDisplay";
 import Grid from '@mui/material/Grid';
+import "./Home.css"
 
-function Characters({allCharacters}){
+function Characters({allCharacters, handleFavorites, baseURL}){
     const [open, setOpen] = useState(false);
     const [search,setSearch] = useState(null)
     const [tier, setTier] = useState('');
@@ -28,8 +28,8 @@ function Characters({allCharacters}){
         }else if (search === character){
             return character
         }
-    }).map((character,index)=>{
-        return <CharacterCard key={index} character={character} />
+    }).map((character)=>{
+        return <CharacterCard key={character.id} character={character} handleFavorites={handleFavorites} baseURL={baseURL} />
    })
 
    const handleSubmit = (event,value) =>{
@@ -79,6 +79,7 @@ function Characters({allCharacters}){
         }
     })*/
     return (
+        <div className='bg'>
         <Container style={{paddingTop: "6em"}}>
             <Grid item xs={6} style={{textAlign: "right",display:"flex"}}>
             <Autocomplete spacing={2} sx={{ width: 300,pr:4, pl:5 }}
@@ -126,6 +127,7 @@ function Characters({allCharacters}){
                 {characterDisplay}
             </Card.Group>
         </Container>
+        </div>
     )
 }
 
