@@ -25,8 +25,8 @@ function Characters({allCharacters, handleFavorites, baseURL}){
     const characterDisplay = allCharacters.filter((character) =>{
         if (search === null){
             return character
-        }else {
-            return character.name.includes(search)
+        }else if (search===character)  {
+            return character
         }
     }).map((character)=>{
         return <CharacterCard key={character.id} character={character} handleFavorites={handleFavorites} baseURL={baseURL} />
