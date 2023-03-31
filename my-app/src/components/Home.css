@@ -21,11 +21,25 @@ body, html {
       100% {background-image: url(../../public/backgroundImages/BackgroundImg1.jpg);}
 }
 
+.characterBG {
+    background-image: url(../../public/backgroundImages/BackgroundImg1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+    
+
+
 .bg {
       background-image: url(../../public/backgroundImages/BackgroundImg1.jpg);
       background-repeat: no-repeat;
       background-attachment: fixed;
-      height: 100%;
+      height: 100vh;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;

@@ -82,8 +82,9 @@ function Characters({allCharacters, handleFavorites, baseURL}){
         }
     })*/
     return (
-        <div className='bg'>
-        <Container className='bg' style={{paddingTop: "6em"}}>
+        <div className='characterBG {
+          '>
+        <Container  style={{paddingTop: "6em"}}>
             <Grid item xs={6} style={{textAlign: "right",display:"flex"}}>
             <Autocomplete spacing={2} sx={{ width: 300,pr:4, pl:5}}
                     freeSolo
